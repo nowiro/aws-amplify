@@ -3,9 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - wget -P /installations https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-        - yum install -y ./installations/google-chrome-stable_current_*.rpm
-        - export CHROME_BIN=/usr/bin/google-chrome
+        # - wget -P /installations https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+        # - yum install -y ./installations/google-chrome-stable_current_*.rpm
+        # - export CHROME_BIN=/usr/bin/google-chrome
         - yarn install
         - yarn run test:ci
     build:
