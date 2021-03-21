@@ -10,7 +10,7 @@ frontend:
   artifacts:
     baseDirectory: dist/mf-host
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - node_modules/**/*
@@ -22,13 +22,13 @@ test:
         - yarn install
         - wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
         - yum install -y ./google-chrome-stable_current_*.rpm
+        - export CHROME_BIN=/usr/bin/google-chrome
     test:
       commands:
         - yarn run test:ci
   artifacts:
-      baseDirectory: dist
-      files:
-        - '**/*'
+    files:
+      - "**/*"
   cache:
     paths:
       - node_modules/**/*
