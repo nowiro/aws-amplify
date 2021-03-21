@@ -3,10 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yarn install
-        - wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-        - yum install -y ./google-chrome-stable_current_*.rpm
+        - wget -P /installations https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+        - yum install -y ./installations/google-chrome-stable_current_*.rpm
         - export CHROME_BIN=/usr/bin/google-chrome
+        - yarn install
         - yarn run test:ci
     build:
       commands:
@@ -18,3 +18,4 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+      - installations/*
