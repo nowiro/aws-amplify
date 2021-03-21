@@ -9,9 +9,6 @@ frontend:
     test:
       commands:
         - yarn run test:ci
-    preBuild:
-      commands:
-
     build:
       commands:
         - yarn run build
