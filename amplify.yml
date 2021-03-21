@@ -1,17 +1,18 @@
 version: 1
 frontend:
   phases:
-    preBuild:
+    preTest:
       commands:
         - wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
         - yum install -y ./google-chrome-stable_current_*.rpm
-        - yarn install
-    build:
-      commands:
-        - yarn run build
+        - export CHROME_BIN=/usr/bin/google-chrome
+         - yarn install
     test:
       commands:
         - yarn run test:ci
+    build:
+      commands:
+        - yarn run build
   artifacts:
     baseDirectory: dist/mf-host
     files:
